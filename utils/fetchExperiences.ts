@@ -7,7 +7,7 @@ export const fetchExperiences = async () => {
     data = await res.json()
     if (data.length>0) {
         // type checking
-        experiences = data.pageInfo
+        experiences = data.experiences
     }
 
     return experiences
