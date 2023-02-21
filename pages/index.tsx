@@ -101,7 +101,7 @@ export async function getStaticPaths() {
     // params: { id: post.id.toString() },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: 'blocking' };
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
