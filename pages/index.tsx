@@ -93,16 +93,28 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
   )
 }
 
+export async function getStaticPaths() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`);
+  const posts:[] = await res.json();
+
+  const paths = posts.map((post) => ({
+    // params: { id: post.id.toString() },
+  }));
+
+  return { paths, fallback: true };
+}
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const basicInfo: BasicInfo = await fetchBasicInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
-
+  
   return {
     props: { basicInfo, experiences, skills, projects, socials, },
     // Nextjs will attempt to regenerate the page, when a request comes in atmost 10 sec
     revalidate: 10, // this is done to faster page generation via shared cache page sharing
+    
   }
 }

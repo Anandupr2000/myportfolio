@@ -18,5 +18,5 @@ export default async function handler(
 
     // console.log(basicInfo)
     // console.log(res)
-    res.status(200).json({ basicInfo })
+    res.status(200).json({ basicInfo  })
 }
