@@ -3,6 +3,7 @@ import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion'
 import Link from 'next/link';
 import { Social } from '@/typings';
+import { Router } from 'next/router';
 
 
 type Props = {
@@ -59,10 +60,10 @@ function Header({ socials }: Props) {
                     duration: 1
                 }}
                 className='flex flex-row items-center text-gray-100 cursor-pointer'>
-                <SocialIcon bgColor='transparent' fgColor='gray' network='email' href="#contact"/>
-                <Link href="#contact">
+                <a href="#contact">
+                    <SocialIcon bgColor='transparent' fgColor='gray' network='email' href="#contact" />
                     <h1 className="hidden md:inline-flex">Get in Touch</h1>
-                </Link>
+                </a>
             </motion.div>
         </header>
     )
