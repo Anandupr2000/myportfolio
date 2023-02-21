@@ -105,7 +105,7 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
 // }
 
 // export const getStaticProps: GetStaticProps<Props> = async () => {
-export const getServerSideProps = async () => {
+export const getServerSideProps:GetStaticProps<Props> = async () => {
   const basicInfo: BasicInfo = await fetchBasicInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
