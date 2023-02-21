@@ -27,7 +27,7 @@ function About({ basicInfo }: Props) {
                 className='mt-36 md:mt-32 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg 
                 md:w-64 md:h-55 xl:w-[300px] xl:h-[400px]'
             />
-            <div className='space-y-3 px-0 md:px-10 xl:mt-28'>
+            <div className='space-y-3 px-0 md:mt-24 md:px-10 xl:mt-28'>
                 <h4 className='text-4xl font-semibold'>Here is some background</h4>
                 <p className='text-justify'>
                     {basicInfo?.backgroundInformation}
