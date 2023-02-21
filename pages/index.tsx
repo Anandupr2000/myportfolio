@@ -93,18 +93,19 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
   )
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`);
-  const posts:[] = await res.json();
+// export async function getStaticPaths() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`);
+//   const posts:[] = await res.json();
 
-  const paths = posts.map((post) => ({
-    // params: { id: post.id.toString() },
-  }));
+//   const paths = posts.map((post) => ({
+//     // params: { id: post.id.toString() },
+//   }));
 
-  return { paths, fallback: 'blocking' };
-}
+//   return { paths, fallback: 'blocking' };
+// }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps = async () => {
   const basicInfo: BasicInfo = await fetchBasicInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
