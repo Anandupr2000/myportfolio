@@ -1,16 +1,16 @@
 import { BasicInfo } from "../typings"
 
 export const fetchBasicInfo = async () => {
-    try {
+    // try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getBasicInfo`)
         const data = await res.json()
         // type checking
         const basicInfo: BasicInfo = data.basicInfo
         // console.log(basicInfo)
         return basicInfo
-    } catch (error) {
-        console.log("error @ fetchBasicInfo")
-        console.log(error)
-        return {}
-    }
+    // } catch (error) {
+    //     console.log("error @ fetchBasicInfo")
+    //     console.log(error);
+    //     return :BasicInfo;
+    // }
 }
