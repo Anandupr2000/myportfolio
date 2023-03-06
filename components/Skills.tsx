@@ -19,7 +19,7 @@ function Skills({ skills }: Props) {
                 </h3>
             </div>
             <div className="  self-center flex-1 justify-center items-center">
-                <div className="grid grid-cols-4 gap-8 md:gap-8">
+                <div className="grid grid-cols-3 md:grid-cols-4 gap-8 md:gap-8">
                     {
                         (skills?.slice(0, skills.length / 2)).map((elem, i) => (
                             <Skill key={elem._id} skill={elem} />

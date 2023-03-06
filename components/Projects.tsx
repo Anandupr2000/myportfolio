@@ -20,17 +20,17 @@ function Projects({ projects }: Props) {
           // <div key={i} className='w-screen flex-shrink-0 snap-center flex flex-col
           projects.map((project, i) => (
             <div key={project?._id} className='w-screen flex-shrink-0 snap-center flex flex-col
-              gap-10 items-center justify-center p-44'>
+              gap-10 items-center justify-center p-12 md:44'>
               {/* {console.log(project)} */}
               <motion.img
                 initial={{
-                  x: -200,
-                  y: 50,
+                  x: 50,
+                  y: 30,
                   opacity: 0,
                 }}
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                className="w-60 h-60 rounded-3xl"
+                className="md:w-60 md:h-60 rounded-3xl"
                 // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
                 src={urlFor(project?.image).url()}
                 alt="" />

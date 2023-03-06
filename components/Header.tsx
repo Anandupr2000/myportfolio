@@ -3,7 +3,8 @@ import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion'
 import Link from 'next/link';
 import { Social } from '@/typings';
-import { Router } from 'next/router';
+import Router from 'next/dist/server/router';
+import { useRouter } from 'next/router';
 
 
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
 }
 
 function Header({ socials }: Props) {
+    let router = useRouter()
     return (
         <header className='sticky top-0 pt-5 md:px-10 flex items-center justify-between mx-auto z-20 xl:items-  center bg-[rgb(36,36,36)]'>
             {/* social icons */}
@@ -60,10 +62,12 @@ function Header({ socials }: Props) {
                     duration: 1
                 }}
                 className='flex flex-row items-center text-gray-100 cursor-pointer'>
-                <a href="#contact">
-                    <SocialIcon bgColor='transparent' fgColor='gray' network='email' href="#contact" />
-                    <h1 className="hidden md:inline-flex">Get in Touch</h1>
-                </a>
+                <div className='button' onClick={(e)=>{router.push("#contact")}}>
+                    <span>
+                        <SocialIcon bgColor='transparent' fgColor='gray' network='email' href="#contact" />
+                        <h1 className="hidden md:inline-flex">Get in Touch</h1>
+                    </span>
+                </div>
             </motion.div>
         </header>
     )
