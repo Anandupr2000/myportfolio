@@ -63,17 +63,17 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
       </section>
       {/* Experience */}
       <section id="experience" className="snap-center">
-        <WorkExperience experience={experiences}/>
+        <WorkExperience experience={experiences} />
       </section>
 
       {/* Skills */}
       <section id="skills" className="snap-start">
-        <Skills skills={skills}/>
+        <Skills skills={skills} />
       </section>
 
       {/* Projects */}
       <section id="projects" className="snap-start">
-        <Projects projects={projects}/>
+        <Projects projects={projects} />
       </section>
 
       {/* Contact Me */}
@@ -104,18 +104,20 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
 //   return { paths, fallback: 'blocking' };
 // }
 
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-export const getServerSideProps:GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  // export const getServerSideProps:GetStaticProps<Props> = async () => {
+
+  // all data is fetched from baseurl which is "https://anandu-portfolio-5v92am8tq-21mp1820-ritacin.vercel.app/" @ vercel
   const basicInfo: BasicInfo = await fetchBasicInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
-  
+
   return {
     props: { basicInfo, experiences, skills, projects, socials, },
     // Nextjs will attempt to regenerate the page, when a request comes in atmost 10 sec
     revalidate: 10, // this is done to faster page generation via shared cache page sharing
-    
+
   }
 }
