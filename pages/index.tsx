@@ -105,7 +105,7 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
 // }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  // export const getServerSideProps:GetStaticProps<Props> = async () => {
+// export const getServerSideProps: GetStaticProps<Props> = async () => {
 
   // all data is fetched from baseurl which is "https://anandu-portfolio-5v92am8tq-21mp1820-ritacin.vercel.app/" @ vercel
   const basicInfo: BasicInfo = await fetchBasicInfo();
