@@ -9,6 +9,7 @@ export const fetchBasicInfo = async () => {
         // console.log(basicInfo)
         return basicInfo
     } catch (error) {
+        console.log("error @ fetchBasicInfo")
         console.log(error)
         return {}
     }
