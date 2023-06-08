@@ -7,6 +7,11 @@ type Props = {
   projects: Project[]
 }
 function Projects({ projects }: Props) {
+  if (!projects) {
+    // Handle the case where projects is null
+    return <div>No projects available</div>;
+  }
+
   return (
     <div className='relative h-screen flex flex-col items-center text-left
     max-w-full  mx-auto z-0 overflow-hidden snap-x snap-mandatory '>
