@@ -33,7 +33,7 @@ type Props = {
 }
 // useEffect(() => { }, [])
 
-function Home({ basicInfo, experiences, skills, projects, socials, }: Props) {
+export default function Home({ basicInfo, experiences, skills, projects, socials, }: Props) {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
     overflow-y-scroll overflow-x-hidden z-0 md:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
@@ -104,7 +104,7 @@ function Home({ basicInfo, experiences, skills, projects, socials, }: Props) {
 //   return { paths, fallback: 'blocking' };
 // }
 
-const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   // export const getServerSideProps: GetStaticProps<Props> = async () => {
 
   // all data is fetched from baseurl which is "https://anandu-portfolio-5v92am8tq-21mp1820-ritacin.vercel.app/" @ vercel
