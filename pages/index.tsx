@@ -117,7 +117,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: { basicInfo, experiences, skills, projects, socials, },
     // Nextjs will attempt to regenerate the page, when a request comes in atmost 10 sec
-    revalidate: 10, // this is done to faster page generation via shared cache page sharing
+    // revalidate: 10, // this is done to faster page generation via shared cache page sharing
 
   }
 }
