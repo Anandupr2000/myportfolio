@@ -53,6 +53,11 @@ function Projects({ projects }: Props) {
                 <p className='text-lg text-justify'>
                   {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
                   Home Screen with all movies just like Netflix. */}
+                  {project?.linkToBuild}
+                </p>
+                <p className='text-lg text-justify'>
+                  {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
+                  Home Screen with all movies just like Netflix. */}
                   {project?.summary}
                 </p>
               </div>
