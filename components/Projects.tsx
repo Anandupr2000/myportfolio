@@ -9,7 +9,7 @@ type Props = {
 function Projects({ projects }: Props) {
   projects.map((project, i) => {
     if (!project) {
-      return null; // Skip rendering this project if it is null or undefined
+      return <div>No projects available</div>; // Skip rendering this project if it is null or undefined
     }
     return (
       <div className='relative h-screen flex flex-col items-center text-left
