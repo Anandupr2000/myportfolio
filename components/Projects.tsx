@@ -20,51 +20,51 @@ function Projects({ projects }: Props) {
           // // <div key={i} className='w-screen flex-shrink-0 snap-center flex flex-col
 
           projects.map((project, i) => {
-            if (project)
-              return <div key={project?._id} className='w-screen flex-shrink-0 snap-center flex flex-col
+            if (!project) return null
+            return <div key={project?._id} className='w-screen flex-shrink-0 snap-center flex flex-col
               gap-10 items-center justify-center p-12 md:44'>
-                {/* {console.log(project)} */}
-                <motion.img
-                  initial={{
-                    x: 50,
-                    y: 30,
-                    opacity: 0,
-                  }}
-                  transition={{ duration: 1.2 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  className="md:w-60 md:h-60 rounded-3xl"
-                  // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
-                  src={urlFor(project?.image).url()}
-                  alt="" />
+              {/* {console.log(project)} */}
+              <motion.img
+                initial={{
+                  x: 50,
+                  y: 30,
+                  opacity: 0,
+                }}
+                transition={{ duration: 1.2 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                className="md:w-60 md:h-60 rounded-3xl"
+                // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
+                src={urlFor(project?.image).url()}
+                alt="" />
 
-                <div className='px-0 md:px-10 max-w-6xl flex flex-col gap-5'>
-                  <h4 className='text-4xl font-semibold text-center'>
-                    <span className="underline decoration-[#f7AB0A]/50">
-                      {/* Case Study {i + 1} of {projects.length} : */}
-                    </span>
-                    {" "}{project?.title}
-                  </h4>
-                  <div className="flex items-center gap-3">
-                    {
-                      project?.technologies.map(technology => (
-                        <img key={technology._id} src={urlFor(technology.image).url()}
-                          className="w-10 h-10 rounded-full " alt="" />
-                      ))
-                    }
-                  </div>
-                  <p className='text-lg text-justify'>
-                    {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
-                  Home Screen with all movies just like Netflix. */}
-                    {project?.linkToBuild}
-                  </p>
-                  <p className='text-lg text-justify'>
-                    {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
-                  Home Screen with all movies just like Netflix. */}
-                    {project?.summary}
-                  </p>
+              <div className='px-0 md:px-10 max-w-6xl flex flex-col gap-5'>
+                <h4 className='text-4xl font-semibold text-center'>
+                  <span className="underline decoration-[#f7AB0A]/50">
+                    {/* Case Study {i + 1} of {projects.length} : */}
+                  </span>
+                  {" "}{project?.title}
+                </h4>
+                <div className="flex items-center gap-3">
+                  {
+                    project?.technologies.map(technology => (
+                      <img key={technology._id} src={urlFor(technology.image).url()}
+                        className="w-10 h-10 rounded-full " alt="" />
+                    ))
+                  }
                 </div>
-
+                <p className='text-lg text-justify'>
+                  {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
+                  Home Screen with all movies just like Netflix. */}
+                  {project?.linkToBuild}
+                </p>
+                <p className='text-lg text-justify'>
+                  {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
+                  Home Screen with all movies just like Netflix. */}
+                  {project?.summary}
+                </p>
               </div>
+
+            </div>
           })
         }
       </div>
