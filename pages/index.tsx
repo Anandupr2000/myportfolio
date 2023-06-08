@@ -104,8 +104,8 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
 //   return { paths, fallback: 'blocking' };
 // }
 
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-  export const getServerSideProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  // export const getServerSideProps: GetStaticProps<Props> = async () => {
 
   // all data is fetched from baseurl which is "https://anandu-portfolio-5v92am8tq-21mp1820-ritacin.vercel.app/" @ vercel
   const basicInfo: BasicInfo = await fetchBasicInfo();
@@ -117,7 +117,7 @@ export default function Home({ basicInfo, experiences, skills, projects, socials
   return {
     props: { basicInfo, experiences, skills, projects, socials, },
     // Nextjs will attempt to regenerate the page, when a request comes in atmost 10 sec
-    // revalidate: 10, // this is done to faster page generation via shared cache page sharing
+    revalidate: 10, // this is done to faster page generation via shared cache page sharing
 
   }
 }
