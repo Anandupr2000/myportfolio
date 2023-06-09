@@ -7,8 +7,6 @@ type Props = {
   projects: Project[]
 }
 function Projects({ projects }: Props) {
-
-
   return (
     <div className='relative h-screen flex flex-col items-center text-left
     max-w-full  mx-auto z-0 overflow-hidden snap-x snap-mandatory '>
@@ -19,7 +17,6 @@ function Projects({ projects }: Props) {
       z-20 scroll-mx-10 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/60">
         {
           projects?.map((project, i) => {
-            if (!project) return null
             return <div key={project?._id} className='w-screen flex-shrink-0 snap-center flex flex-col
               gap-10 items-center justify-center p-12 md:44'>
               {/* {console.log(project)} */}
@@ -54,7 +51,8 @@ function Projects({ projects }: Props) {
                 <p className='text-lg text-justify'>
                   {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
                   Home Screen with all movies just like Netflix. */}
-                  {project?.linkToBuild}
+                  <span>Link : </span>
+                  <a href={project?.linkToBuild}>{project?.linkToBuild}</a>
                 </p>
                 <p className='text-lg text-justify'>
                   {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
