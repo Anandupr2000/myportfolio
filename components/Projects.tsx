@@ -28,7 +28,7 @@ function Projects({ projects }: Props) {
                 }}
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                className="md:w-60 md:h-60 rounded-3xl"
+                className="md:w-60 md:h-60 rounded-3xl cursor-pointer"
                 // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
                 src={urlFor(project?.image)?.url()}
                 alt="" onClick={() => { window.location.href = project?.linkToBuild }} />
@@ -48,12 +48,6 @@ function Projects({ projects }: Props) {
                     ))
                   }
                 </div>
-                <p className='text-lg text-justify'>
-                  {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
-                  Home Screen with all movies just like Netflix. */}
-                  <span>Link : </span>
-                  <a href={project?.linkToBuild}>{project?.linkToBuild}</a>
-                </p>
                 <p className='text-lg text-justify'>
                   {/* Netflix 2.0 is an application with LogIn and Log Out Authentication with google. It has a beautifull
                   Home Screen with all movies just like Netflix. */}
