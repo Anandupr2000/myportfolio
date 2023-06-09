@@ -8,10 +8,6 @@ type Props = {
 }
 function Projects({ projects }: Props) {
 
-  if (projects == null) {
-    // Handle the case where projects is null
-    return <div>No projects available</div>;
-  }
 
   return (
     <div className='relative h-screen flex flex-col items-center text-left
@@ -21,7 +17,7 @@ function Projects({ projects }: Props) {
       </h3>
       <div className="relative w-full p-5 flex overflow-x-scroll snap-x snap-mandatory mt-32 
       z-20 scroll-mx-10 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/60">
-        { 
+        {
           projects?.map((project, i) => {
             if (!project) return null
             return <div key={project?._id} className='w-screen flex-shrink-0 snap-center flex flex-col
@@ -37,7 +33,7 @@ function Projects({ projects }: Props) {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 className="md:w-60 md:h-60 rounded-3xl"
                 // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
-                src={urlFor(project?.image).url()}
+                src={urlFor(project?.image)?.url()}
                 alt="" />
 
               <div className='px-0 md:px-10 max-w-6xl flex flex-col gap-5'>
@@ -49,8 +45,8 @@ function Projects({ projects }: Props) {
                 </h4>
                 <div className="flex items-center gap-3">
                   {
-                    project?.technologies.map(technology => (
-                      <img key={technology._id} src={urlFor(technology.image).url()}
+                    project?.technologies?.map(technology => (
+                      <img key={technology?._id} src={urlFor(technology?.image).url()}
                         className="w-10 h-10 rounded-full " alt="" />
                     ))
                   }
