@@ -31,7 +31,7 @@ function Projects({ projects }: Props) {
                 className="md:w-60 md:h-60 rounded-3xl"
                 // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
                 src={urlFor(project?.image)?.url()}
-                alt="" />
+                alt="" onClick={() => { window.location.href = project?.linkToBuild }} />
 
               <div className='px-0 md:px-10 max-w-6xl flex flex-col gap-5'>
                 <h4 className='text-4xl font-semibold text-center'>
